@@ -1,6 +1,6 @@
 # Team and project
 ## Team code/name
-> 
+> RGB&CO
 
 ## Team members list 
 1. > Перун Єлизавета - **team leader**
