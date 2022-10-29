@@ -4,6 +4,7 @@ using Infrastructure.Factory;
 using Infrastructure.Services;
 using Infrastructure.Services.PersistentProgress;
 using Infrastructure.Services.SaveLoad;
+using Services.Input;
 using StaticData;
 using UI.Services.Factory;
 using UI.Services.Windows;
@@ -44,7 +45,7 @@ namespace Infrastructure.StateMachine
       RegisterStaticData();
 
       _services.RegisterSingle<IGameStateMachine>(_stateMachine);
-      // _services.RegisterSingle<IInputService>(RegisterInputService());
+      _services.RegisterSingle<IInputService>(RegisterInputService());
       _services.RegisterSingle<IPersistentProgressService>(new PersistentProgressService());
       _services.RegisterSingle<IAssetProviderService>(new AssetProviderService());
       
@@ -76,12 +77,19 @@ namespace Infrastructure.StateMachine
       _services.RegisterSingle<IStaticDataService>(staticData);
     }
 
-    /*private static IInputService RegisterInputService()
+    private static IInputService RegisterInputService()
     {
-      if (Application.isEditor)
-        return new StandaloneInputService();
-      else
-        return new MobileInputService();
-    }*/
+#if UNITY_EDITOR
+      return new StandaloneInputService();
+#elif UNITY_ANDROID
+         return new MobileInputService();
+#elif UNITY_IOS 
+         return new MobileInputService();
+#elif UNITY_STANDALONE_OSX
+         return new StandaloneInputService();
+#elif UNITY_STANDALONE_WIN
+         return new StandaloneInputService();
+#endif
+    }
   }
 }
