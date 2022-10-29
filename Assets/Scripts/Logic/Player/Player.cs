@@ -1,4 +1,3 @@
-using System;
 using Infrastructure.Services;
 using Services.Input;
 using UnityEngine;
@@ -14,15 +13,10 @@ namespace Logic.Player
         {
             inputService = AllServices.Container.Single<IInputService>();
         }
-
-        // Start is called before the first frame update
-        void Start()
-        {
         
-        }
 
-        // Update is called once per frame
-        void Update()
+        // Implement movement here
+        private void FixedUpdate()
         {
         
         }
