@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using CameraLogic;
 using Infrastructure.AssetManagement;
 using Infrastructure.Services;
 using Infrastructure.Services.PersistentProgress;
@@ -40,6 +41,11 @@ namespace Infrastructure.Factory
     {
       PlayerGameObject = InstantiateRegistred(AssetPath.HeroPath, at);
       return PlayerGameObject;
+    }
+
+    public CinemachineSwitcher CreateCinemachine()
+    {
+      return _assets.Instantiate(AssetPath.CinemachinePath).GetComponent<CinemachineSwitcher>();
     }
 
     public GameObject CreateHud()
@@ -97,5 +103,6 @@ namespace Infrastructure.Factory
   {
     public const string HeroPath = "Prefabs/Player/Player";
     public const string HudPath = "Prefabs/UI/Hud";
+    public const string CinemachinePath = "Prefabs/Camera/CM StateDrivenCamera";
   }
 }

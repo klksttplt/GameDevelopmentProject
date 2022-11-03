@@ -1,3 +1,4 @@
+using CameraLogic;
 using CodeBase.Infrastructure;
 using Infrastructure.Factory;
 using Infrastructure.Services;
@@ -60,7 +61,7 @@ namespace Infrastructure.StateMachine
     private void InitGameWorld()
     {
       LevelStaticData levelData = LevelStaticData();
-
+      
       GameObject player = _gameFactory.CreatePlayerObject(levelData.InitialHeroPosition);
       InitHud(player);
       CameraFollow(player);
@@ -74,7 +75,8 @@ namespace Infrastructure.StateMachine
 
     private void CameraFollow(GameObject hero)
     {
-
+      var cinemachine = _gameFactory.CreateCinemachine();
+      cinemachine.SetPlayerTarget(hero.transform.transform);
     }
     
   }
