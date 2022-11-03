@@ -11,8 +11,8 @@ namespace Services.Input
 
         public abstract Vector2 Axis { get; }
 
-        public bool IsJumpButtonUp() => 
-            SimpleInput.GetButtonUp(JumpButton);
+        public bool IsJumpButtonDown() => 
+            SimpleInput.GetButtonDown(JumpButton);
 
         public bool IsAttackButtonUp() =>
             SimpleInput.GetButtonUp(AttackButton);
