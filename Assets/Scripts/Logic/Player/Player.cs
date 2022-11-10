@@ -1,12 +1,10 @@
-using System;
-using Cinemachine;
 using Infrastructure.Services;
 using Services.Input;
 using UnityEngine;
 
 namespace Logic.Player
 {
-    public class Player : MonoBehaviour
+    public class Player :  Unit
     {
         // Fields: Editor 
 
