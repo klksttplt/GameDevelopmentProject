@@ -20,10 +20,11 @@ namespace Logic.Damage
         protected StatData maxHealthStatData;
         
         // Fields: Internal State
-        
-        protected float maxHealth;
-        protected bool isDead;
-        protected bool isVulnerable = true;
+
+        private StatValueProvider healthValueProvider;
+        private float maxHealth;
+        private bool isDead;
+        private bool isVulnerable = true;
         private float startValueNormalized = 1f;
         
         //Public API
@@ -95,6 +96,15 @@ namespace Logic.Damage
         }
         
         // Methods: Lifecycle
+        
+        public override void Awake()
+        {
+            base.Awake();
+            var providedData = GetStatValue(MaxHealthStatDef);
+            healthValueProvider = providedData ?? maxHealthStatData.DefaultBaseValueProvider;
+            maxHealth = healthValueProvider.BaseValue;
+            ChangeHealth(1f);
+        }
         
         // Methods: Internal State
         
