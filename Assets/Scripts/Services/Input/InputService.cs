@@ -14,8 +14,8 @@ namespace Services.Input
         public bool IsJumpButtonDown() => 
             SimpleInput.GetButtonDown(JumpButton);
 
-        public bool IsAttackButtonUp() =>
-            SimpleInput.GetButtonUp(AttackButton);
+        public bool IsAttackButtonDown() =>
+            SimpleInput.GetButtonDown(AttackButton);
 
         protected static Vector2 SimpleInputAxis() =>
             new Vector2(SimpleInput.GetAxis(Horizontal), SimpleInput.GetAxis(Vertical));

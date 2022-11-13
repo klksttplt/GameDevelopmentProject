@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5659804281584100160}
   - component: {fileID: 1766360016920138274}
+  - component: {fileID: 4195028847473725524}
   m_Layer: 0
   m_Name: BladeAttack
   m_TagString: Untagged
@@ -57,6 +58,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.90992796, y: 0.1811536}
   m_EdgeRadius: 0
+--- !u!114 &4195028847473725524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970379817569595040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c29ea0c20fe242358d3d80af00f2fed5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnHit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3421503825718529287
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,10 +169,10 @@ GameObject:
   - component: {fileID: 2254870947764622254}
   - component: {fileID: 6282635288568129370}
   - component: {fileID: 4510175221130245978}
-  - component: {fileID: 4375122148593885235}
   - component: {fileID: 5754880080976718050}
   - component: {fileID: -7002080008662014022}
-  m_Layer: 0
+  - component: {fileID: 6930627588491243731}
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -282,18 +298,6 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 256
---- !u!114 &4375122148593885235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4218276539042740469}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a800a33276ed612488a56ac16eb2e3c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5754880080976718050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -303,7 +307,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4218276539042740469}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebb90bd496b8393428c56ee0651a019e, type: 3}
+  m_Script: {fileID: 11500000, guid: a800a33276ed612488a56ac16eb2e3c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &-7002080008662014022
@@ -318,3 +322,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52ee0eead2bf9e14eb44dbb177e357a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6930627588491243731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4218276539042740469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cb3c2ae63a84cb18c0d2835fc73cb7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageValueData:
+    statDef: {fileID: 11400000, guid: 0eba2de6b4a2a8c449ce3b5a348dd8ad, type: 2}
+    defaultBaseValueProvider:
+      baseValue: 1
+      perLevelIncrement: 0
+  attackRechargeTimeData:
+    statDef: {fileID: 11400000, guid: ac89e094db50c3e47ba4b0ea5c4289c6, type: 2}
+    defaultBaseValueProvider:
+      baseValue: 1
+      perLevelIncrement: 0
+  bladeObject: {fileID: 970379817569595040}

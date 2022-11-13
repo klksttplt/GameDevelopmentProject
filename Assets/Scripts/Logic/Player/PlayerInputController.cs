@@ -1,7 +1,6 @@
 using Infrastructure.Services;
 using Logic.Common;
 using Services.Input;
-using UnityEngine;
 
 namespace Logic.Player
 {
@@ -25,6 +24,8 @@ namespace Logic.Player
         {
             if(inputService.IsJumpButtonDown())
                 Moveable.Jump();
+            if (inputService.IsAttackButtonDown())
+                AttackController.Attack();
         }
 
         private void FixedUpdate()
