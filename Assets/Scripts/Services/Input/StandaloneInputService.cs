@@ -1,5 +1,4 @@
-﻿
-using System.Numerics;
+﻿using UnityEngine;
 
 namespace Services.Input
 {
@@ -11,7 +10,7 @@ namespace Services.Input
             {
                 var axis = SimpleInputAxis();
 
-                if (axis == Vector2.Zero)
+                if (axis == Vector2.zero)
                     axis = UnityAxis();
 
                 return axis;

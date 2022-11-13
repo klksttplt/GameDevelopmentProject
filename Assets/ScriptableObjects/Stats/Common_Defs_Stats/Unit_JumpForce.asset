@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74636b85a9a84a239177348976ab9569, type: 3}
-  m_Name: Unit_Movespeed
+  m_Name: Unit_JumpForce
   m_EditorClassIdentifier: 
   valueType: 0
-  statName: MovementSpeed
+  statName: JumpForce
   spriteIcon: {fileID: 0}

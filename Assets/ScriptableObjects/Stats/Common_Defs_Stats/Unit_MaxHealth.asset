@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Unit_MaxHealth
   m_EditorClassIdentifier: 
   valueType: 0
-  statName: 
+  statName: MaxHealth
   spriteIcon: {fileID: 0}

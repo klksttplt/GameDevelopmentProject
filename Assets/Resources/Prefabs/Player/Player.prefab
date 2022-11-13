@@ -95,7 +95,9 @@ GameObject:
   - component: {fileID: 1063747011966956933}
   - component: {fileID: 2254870947764622254}
   - component: {fileID: 6282635288568129370}
-  - component: {fileID: 2130337062946023567}
+  - component: {fileID: 4510175221130245978}
+  - component: {fileID: 4375122148593885235}
+  - component: {fileID: -7002080008662014022}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -185,7 +187,44 @@ MonoBehaviour:
     defaultBaseValueProvider:
       baseValue: 1
       perLevelIncrement: 0
---- !u!114 &2130337062946023567
+--- !u!114 &4510175221130245978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4218276539042740469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c560c4fb6736f844087fbfe944f9df46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeedData:
+    statDef: {fileID: 11400000, guid: b18f9a12089e30b4d8f971dda9cbcba4, type: 2}
+    defaultBaseValueProvider:
+      baseValue: 1
+      perLevelIncrement: 0
+  jumpForceData:
+    statDef: {fileID: 11400000, guid: f2230b891fbd9764f8c321c67773018a, type: 2}
+    defaultBaseValueProvider:
+      baseValue: 1
+      perLevelIncrement: 0
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 256
+--- !u!114 &4375122148593885235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4218276539042740469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a800a33276ed612488a56ac16eb2e3c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-7002080008662014022
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -197,5 +236,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52ee0eead2bf9e14eb44dbb177e357a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  jumpForce: 400
+  speed: 0
+  jumpForce: 0

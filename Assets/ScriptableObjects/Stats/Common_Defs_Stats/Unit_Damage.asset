@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Unit_Damage
   m_EditorClassIdentifier: 
   valueType: 0
-  statName: 
+  statName: Damage
   spriteIcon: {fileID: 0}
