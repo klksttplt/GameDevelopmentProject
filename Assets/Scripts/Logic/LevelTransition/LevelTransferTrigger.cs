@@ -20,8 +20,10 @@ namespace Logic.LevelTransition
         {
             if (_triggered)
                 return;
-            
-            if (other.GetComponent<Player.Player>()) 
+
+            var player = other.GetComponent<Player.Player>();
+            Debug.Log(player + " "  + player.hasKey);
+            if (player && player.hasKey) 
                 _stateMachine.Enter<LoadLevelState, string>(transferTo);
         }
     }

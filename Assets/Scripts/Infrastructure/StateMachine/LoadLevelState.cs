@@ -65,6 +65,11 @@ namespace Infrastructure.StateMachine
       GameObject player = _gameFactory.CreatePlayerObject(levelData.InitialHeroPosition);
       InitHud(player);
       CameraFollow(player);
+
+      foreach (var enemyPos in levelData.EnemyPositions)
+      {
+        _gameFactory.CreateEnemyObject(enemyPos);
+      }
     }
 
     private LevelStaticData LevelStaticData() => 

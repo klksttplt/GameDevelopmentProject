@@ -7,7 +7,7 @@ namespace Services.Input
         protected const string Horizontal = "Horizontal";
         protected const string Vertical = "Vertical";
         private const string JumpButton = "Jump";
-        private const string AttackButton = "Fire";
+        private const string AttackButton = "Fire1";
 
         public abstract Vector2 Axis { get; }
 

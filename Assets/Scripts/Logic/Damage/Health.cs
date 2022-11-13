@@ -1,5 +1,8 @@
-﻿namespace Logic.Damage
+﻿using UnityEngine;
+
+namespace Logic.Damage
 {
+    [DefaultExecutionOrder(-19)] // before components that use Health but after Stats
     public class Health : GenericHealth
     {
         private float currentHealth;

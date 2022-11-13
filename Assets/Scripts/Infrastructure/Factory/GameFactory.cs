@@ -43,6 +43,10 @@ namespace Infrastructure.Factory
       return PlayerGameObject;
     }
 
+    public GameObject CreateEnemyObject(Vector3 at)
+    {
+      return _assets.Instantiate(AssetPath.EnemyPath, at);
+    }
     public CinemachineSwitcher CreateCinemachine()
     {
       return _assets.Instantiate(AssetPath.CinemachinePath).GetComponent<CinemachineSwitcher>();
@@ -58,7 +62,12 @@ namespace Infrastructure.Factory
 
       return hud;
     }
-    
+
+    public GameObject CreateItem(Vector3 at)
+    {
+      return _assets.Instantiate(AssetPath.KeyPath, at);
+    }
+
 
     public void Register(ISavedProgressReader progressReader)
     {
@@ -102,7 +111,9 @@ namespace Infrastructure.Factory
   public static class AssetPath
   {
     public const string HeroPath = "Prefabs/Player/Player";
+    public const string EnemyPath = "Prefabs/Enemy/Skeleton";
     public const string HudPath = "Prefabs/UI/Hud";
     public const string CinemachinePath = "Prefabs/Camera/CM StateDrivenCamera";
+    public const string KeyPath = "Prefabs/Items/Key";
   }
 }

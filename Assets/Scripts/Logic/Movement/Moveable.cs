@@ -80,7 +80,7 @@ namespace Logic.Movement
 
         private bool IsGrounded()
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 2f, groundMask);
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1f, groundMask);
             Debug.DrawRay(transform.position, Vector2.down, Color.green);
 
             if (hit.collider != null)

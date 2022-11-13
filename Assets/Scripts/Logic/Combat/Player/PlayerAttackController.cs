@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Logic.Combat.Player
@@ -10,10 +12,16 @@ namespace Logic.Combat.Player
         [SerializeField] 
         private Blade playerBlade;
 
+        [SerializeField] 
+        private float attackDuration; // change further to attack anim time
         
         // Fields: Internal State
 
         private bool resetAttack = true;
+
+        private Damage damage;
+        
+        private List<Attackable> damagedTargets = new List<Attackable>();
         
         // Public API
         
@@ -21,9 +29,8 @@ namespace Logic.Combat.Player
         {
             if (resetAttack)
             {
-                Debug.Log("Player Attacks");
                 playerBlade.gameObject.SetActive(true);
-                StartCoroutine(ResetJumpRoutine());
+                StartCoroutine(ResetAttackRoutine());
             }
         }
         
@@ -37,20 +44,35 @@ namespace Logic.Combat.Player
             playerBlade.gameObject.SetActive(false);
         }
 
+        private void Start()
+        {
+            damage = new Damage()
+            {
+                amount = damageValue
+            };
+        }
+        
         // Methods: Internal State
         
-        private IEnumerator ResetJumpRoutine()
+        private IEnumerator ResetAttackRoutine()
         {
-            resetAttack = true;
-            yield return new WaitForSeconds(attackRechargeTime);
             resetAttack = false;
+
+            yield return new WaitForSeconds(attackDuration);
+            playerBlade.gameObject.SetActive(false);
+
+            yield return new WaitForSeconds(attackRechargeTime);
+            damagedTargets.Clear();
+            resetAttack = true;
         }
 
         private void OnHit(Collider2D damagedTarget)
         {
             var attackable = damagedTarget.gameObject.GetComponent<Attackable>();
-            if (attackable)
+            if (attackable & !damagedTargets.Contains(attackable))
             {
+                damagedTargets.Add(attackable);
+                attackable.TakeDamage(damage);
                 Debug.Log("Player damaged " + damagedTarget.name);
             }
         }

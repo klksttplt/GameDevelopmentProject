@@ -143,7 +143,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -6753608261532186181, guid: 9eb5ed21c32495c47b2b59b8d96f90ae, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -166,6 +166,7 @@ GameObject:
   - component: {fileID: 1777359182488243842}
   - component: {fileID: 8912765916090894045}
   - component: {fileID: 1063747011966956933}
+  - component: {fileID: 1226443234069560301}
   - component: {fileID: 2254870947764622254}
   - component: {fileID: 6282635288568129370}
   - component: {fileID: 4510175221130245978}
@@ -242,6 +243,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!95 &1226443234069560301
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4218276539042740469}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 56bd7a4ae1322d34f982b53d6397ac85, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &2254870947764622254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -322,6 +342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52ee0eead2bf9e14eb44dbb177e357a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasKey: 0
 --- !u!114 &6930627588491243731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -344,4 +365,5 @@ MonoBehaviour:
     defaultBaseValueProvider:
       baseValue: 1
       perLevelIncrement: 0
-  bladeObject: {fileID: 970379817569595040}
+  playerBlade: {fileID: 4195028847473725524}
+  attackDuration: 0.5

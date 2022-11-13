@@ -72,6 +72,7 @@ namespace Logic.Damage
                 currentHealth = ChangeHealth(damagedHealthValue);
                 
                 OnDamageTaken.Invoke(damage);
+                Debug.Log("Left health" + currentHealth);
                 if (currentHealth <= 0f) OnDied.Invoke();
             }
         }
@@ -103,7 +104,7 @@ namespace Logic.Damage
             var providedData = GetStatValue(MaxHealthStatDef);
             healthValueProvider = providedData ?? maxHealthStatData.DefaultBaseValueProvider;
             maxHealth = healthValueProvider.BaseValue;
-            ChangeHealth(1f);
+            ChangeHealth(maxHealth);
         }
         
         // Methods: Internal State

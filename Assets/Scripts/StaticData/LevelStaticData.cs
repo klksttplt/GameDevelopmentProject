@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace StaticData
@@ -7,5 +8,6 @@ namespace StaticData
     {
         public string LevelKey;
         public Vector3 InitialHeroPosition;
+        public List<Vector3> EnemyPositions;
     }
 }
