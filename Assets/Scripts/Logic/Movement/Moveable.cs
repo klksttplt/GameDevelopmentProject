@@ -14,6 +14,9 @@ namespace Logic.Movement
         [SerializeField] 
         private StatData jumpForceData;
 
+        [SerializeField, Header("Movement")] 
+        private bool turnToMovementDir = true;
+
         [SerializeField, Header("Ground Check")] 
         private LayerMask groundMask;
         // Fields: Internal State
@@ -34,6 +37,15 @@ namespace Logic.Movement
         public void Move(Vector2 input)
         {
             Rigidbody.velocity = new Vector2(input.x * movementSpeed, Rigidbody.velocity.y);
+
+            if (turnToMovementDir)
+            {
+                if (input.x < 0)
+                    Flip(false);
+                else if (input.x > 0)
+                    Flip(true);
+            }
+            
         }
 
         public void Jump()
@@ -84,5 +96,14 @@ namespace Logic.Movement
             yield return new WaitForSeconds(0.1f);
             resetJump = false;
         }
+        private void Flip(bool facingLeft)
+        {
+            var currentFacingLeft = transform.localScale.x > 0;
+            if(facingLeft && currentFacingLeft)
+                transform.localScale = new Vector3( transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+            else if(!facingLeft && !currentFacingLeft)
+                transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+        }
+        
     }
 }
