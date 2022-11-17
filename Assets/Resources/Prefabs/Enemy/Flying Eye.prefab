@@ -11,6 +11,10 @@ GameObject:
   - component: {fileID: 4935617539293076402}
   - component: {fileID: -2871737035502032755}
   - component: {fileID: -4407939638835441956}
+  - component: {fileID: 1552968081245623168}
+  - component: {fileID: -6422900219809350389}
+  - component: {fileID: -2942334030961086482}
+  - component: {fileID: -4416218841152711345}
   m_Layer: 0
   m_Name: Flying Eye
   m_TagString: Untagged
@@ -70,6 +74,62 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1552968081245623168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4267294046367039467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0504c4c8d83e3a846b78e897abf700b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnItemsAfterDeath: 0
+  itemsToSpawn: []
+--- !u!114 &-6422900219809350389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4267294046367039467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e16d8465034155a98ce755234b7950, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealthStatData:
+    statDef: {fileID: 0}
+    defaultBaseValueProvider:
+      baseValue: 0
+      perLevelIncrement: 0
+--- !u!114 &-2942334030961086482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4267294046367039467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 921e2fdd75486a04eb2f9556203fbb34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-4416218841152711345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4267294046367039467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0acf50846e94971b287dfabbb1f8a2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statsMap: {fileID: 11400000, guid: a15c7d7d66fa8e5488dba5f641f8fff1, type: 2}
 --- !u!1 &6681185875365499322
 GameObject:
   m_ObjectHideFlags: 0
