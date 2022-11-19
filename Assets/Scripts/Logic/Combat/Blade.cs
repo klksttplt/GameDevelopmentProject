@@ -1,8 +1,7 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
-namespace Logic.Combat.Player
+namespace Logic.Combat
 {
     public class Blade : MonoBehaviour
     {

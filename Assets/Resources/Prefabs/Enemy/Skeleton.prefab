@@ -113,7 +113,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5232158794122686665}
   - component: {fileID: 1006193902754392246}
-  m_Layer: 7
+  - component: {fileID: 695707517746189569}
+  m_Layer: 0
   m_Name: Blade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +142,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8300528224953290430}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -160,6 +161,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.28, y: 0.15}
   m_EdgeRadius: 0
+--- !u!114 &695707517746189569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8300528224953290430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c29ea0c20fe242358d3d80af00f2fed5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnHit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8801246678078920857
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,6 +279,7 @@ MonoBehaviour:
   pointA: {fileID: 0}
   pointB: {fileID: 0}
   distanceToStop: 0.1
+  waitingTime: 2
   spawnItemsAfterDeath: 1
   itemsToSpawn:
   - {fileID: 556749979693934808, guid: 519837589d3a9524bb5b05037e9762c6, type: 3}
@@ -331,6 +348,8 @@ MonoBehaviour:
       baseValue: 0
       perLevelIncrement: 0
   isHit: 0
+  blade: {fileID: 695707517746189569}
+  playerDetectionDistance: 3
 --- !u!114 &4156657657536026232
 MonoBehaviour:
   m_ObjectHideFlags: 0

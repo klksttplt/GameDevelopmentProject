@@ -32,6 +32,11 @@ namespace Animations
             animator.SetFloat(Move1, Mathf.Abs(move));
         }
 
+        public void Move(bool move)
+        {
+            animator.SetBool(Move1, move);
+        }
+        
         public void Jump(bool jump)
         {
             animator.SetBool(Jumping, jump);

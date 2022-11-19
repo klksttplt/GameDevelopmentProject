@@ -56,7 +56,7 @@ namespace Logic.Combat.Player
         
         // Methods: Internal State
         
-        private IEnumerator ResetAttackRoutine()
+        protected override IEnumerator ResetAttackRoutine()
         {
             resetAttack = false;
 

@@ -14,12 +14,12 @@ namespace Infrastructure.Factory
 {
   public class GameFactory : IGameFactory
   {
-    public GameObject Player => player;
+    public GameObject Player { get; private set; }
+
     public List<ISavedProgressReader> ProgressReaders { get; } = new List<ISavedProgressReader>();
     public List<ISavedProgress> ProgressWriters { get; } = new List<ISavedProgress>();
     private GameObject PlayerGameObject { get; set; }
 
-    private GameObject player;
     private readonly IAssetProviderService _assets;
     private readonly IStaticDataService _staticData;
     private readonly IPersistentProgressService _progressService;
@@ -43,7 +43,7 @@ namespace Infrastructure.Factory
     public GameObject CreatePlayerObject(Vector3 at)
     {
       PlayerGameObject = InstantiateRegistred(AssetPath.HeroPath, at);
-      player = PlayerGameObject;
+      Player = PlayerGameObject;
       return PlayerGameObject;
     }
 

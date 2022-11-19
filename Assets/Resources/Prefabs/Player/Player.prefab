@@ -173,6 +173,7 @@ GameObject:
   - component: {fileID: 5754880080976718050}
   - component: {fileID: 577383742349492662}
   - component: {fileID: -7002080008662014022}
+  - component: {fileID: -5713997434137625054}
   - component: {fileID: 6930627588491243731}
   m_Layer: 6
   m_Name: Player
@@ -356,6 +357,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasKey: 0
+--- !u!114 &-5713997434137625054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4218276539042740469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 921e2fdd75486a04eb2f9556203fbb34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &6930627588491243731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -378,5 +391,6 @@ MonoBehaviour:
     defaultBaseValueProvider:
       baseValue: 1
       perLevelIncrement: 0
+  isHit: 0
   playerBlade: {fileID: 4195028847473725524}
   attackDuration: 0.5

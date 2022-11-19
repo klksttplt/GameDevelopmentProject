@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using Infrastructure.Factory;
 using Infrastructure.Services;
@@ -16,8 +17,11 @@ namespace Logic.Enemy
         protected Transform pointA;
         [SerializeField]
         protected Transform pointB;
+        // change to stats in further
         [SerializeField] 
         protected float distanceToStop;
+        [SerializeField] 
+        protected float waitingTime;
         
         [SerializeField, Header("Items")] 
         private bool spawnItemsAfterDeath;
@@ -47,6 +51,7 @@ namespace Logic.Enemy
                         gameFactory.CreateItem(transform.position);}
                 Destroy(gameObject);
             });
+            currentTarget = pointA.position;
         }
 
         private void FixedUpdate()
@@ -60,20 +65,31 @@ namespace Logic.Enemy
 
         // Methods: Internal State
         
-        public virtual void Movement()
+        protected virtual void Movement()
         {
-            if (Vector3.Distance(transform.position, pointA.position) <= distanceToStop)
+            if (Vector3.Distance(transform.position, currentTarget) <= distanceToStop && isPatrolling)
             {
-                currentTarget = pointB.position;
-                Animable.Idle();
+                StartCoroutine(StopAndWait());
             }
-            else if (Vector3.Distance(transform.position, pointB.position) <= distanceToStop)
-            {
-                currentTarget = pointA.position;
-                Animable.Idle();
-            }
+            
             if(!AttackController.isHit && isPatrolling)
                 Moveable.MoveTowards(currentTarget);
+        }
+
+        protected virtual IEnumerator StopAndWait()
+        {
+            Debug.Log("Stop and wait");
+            Animable.Move(false);
+            Animable.Idle();
+            isPatrolling = false;
+            yield return new WaitForSeconds(waitingTime);
+
+            currentTarget = currentTarget == pointA.position ? pointB.position : pointA.position;
+
+            isPatrolling = true;
+            Animable.Move(true);
+            
+
         }
     }
 }

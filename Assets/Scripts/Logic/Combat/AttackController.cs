@@ -1,3 +1,4 @@
+using System.Collections;
 using Animations;
 using Logic.Common;
 using Logic.Stats;
@@ -44,5 +45,9 @@ namespace Logic.Combat
             attackRechargeTimeProvider = attackRechargeProvidedData ?? attackRechargeTimeData.DefaultBaseValueProvider;
             attackRechargeTime = attackRechargeTimeProvider.BaseValue;
         }
+        
+        // Methods: Internal State
+
+        protected abstract IEnumerator ResetAttackRoutine();
     }
 }

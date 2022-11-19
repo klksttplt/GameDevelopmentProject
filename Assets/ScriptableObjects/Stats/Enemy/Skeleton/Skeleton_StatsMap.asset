@@ -27,5 +27,5 @@ MonoBehaviour:
       perLevelIncrement: 0
   - statDef: {fileID: 11400000, guid: b18f9a12089e30b4d8f971dda9cbcba4, type: 2}
     defaultBaseValueProvider:
-      baseValue: 9
+      baseValue: 6
       perLevelIncrement: 0
