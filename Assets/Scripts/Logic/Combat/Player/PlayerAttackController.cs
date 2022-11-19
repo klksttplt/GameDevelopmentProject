@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Animations;
 using UnityEngine;
 
 namespace Logic.Combat.Player
@@ -30,6 +31,7 @@ namespace Logic.Combat.Player
             if (resetAttack)
             {
                 playerBlade.gameObject.SetActive(true);
+                Animable?.Attack();
                 StartCoroutine(ResetAttackRoutine());
             }
         }

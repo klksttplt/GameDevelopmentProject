@@ -46,6 +46,7 @@ namespace Logic.Movement
                     Flip(true);
             }
             
+            Animable?.Move(input.x);
         }
 
         public void Jump()
@@ -53,6 +54,7 @@ namespace Logic.Movement
             if (IsGrounded())
             {
                 Rigidbody.velocity = new Vector2(Rigidbody.velocity.x, jumpForce);
+                Animable?.Jump(true);
                 StartCoroutine(ResetJumpRoutine());
             }
         }
@@ -80,7 +82,7 @@ namespace Logic.Movement
 
         private bool IsGrounded()
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1f, groundMask);
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, .2f, groundMask);
             Debug.DrawRay(transform.position, Vector2.down, Color.green);
 
             if (hit.collider != null)

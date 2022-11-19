@@ -1,3 +1,4 @@
+using Animations;
 using Logic.Common;
 using Logic.Stats;
 using UnityEngine;
@@ -20,7 +21,7 @@ namespace Logic.Combat
         
         protected StatValueProvider attackRechargeTimeProvider;
         protected float attackRechargeTime;
-
+        
         // Public API
         
         public StatDef DamageStatDef => damageValueData.Def;
