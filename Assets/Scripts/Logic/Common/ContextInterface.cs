@@ -1,4 +1,5 @@
 ﻿using System;
+using Animations;
 using Logic.Combat;
 using Logic.Damage;
 using Logic.Movement;
@@ -30,6 +31,9 @@ namespace Logic.Common
         public AttackController AttackController { get; private set; }
         public bool HasAttackController { get; private set; }
         
+        public Animable Animable { get; private set; }
+        public bool IsAnimable { get; private set; }
+        
         // Lifecycle
 
         public virtual void Awake()
@@ -53,6 +57,9 @@ namespace Logic.Common
                 
                 Attackable = GetComponent<Attackable>();
                 IsAttackable = Attackable != null;
+                
+                Animable = GetComponent<Animable>();
+                IsAnimable = Animable != null;
             }
         }
     }

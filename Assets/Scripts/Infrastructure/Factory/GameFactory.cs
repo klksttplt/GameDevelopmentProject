@@ -4,6 +4,7 @@ using Infrastructure.AssetManagement;
 using Infrastructure.Services;
 using Infrastructure.Services.PersistentProgress;
 using Infrastructure.StateMachine;
+using Logic.Player;
 using StaticData;
 using UI.Elements;
 using UI.Services.Windows;
@@ -13,10 +14,12 @@ namespace Infrastructure.Factory
 {
   public class GameFactory : IGameFactory
   {
+    public GameObject Player { get; private set; }
+
     public List<ISavedProgressReader> ProgressReaders { get; } = new List<ISavedProgressReader>();
     public List<ISavedProgress> ProgressWriters { get; } = new List<ISavedProgress>();
     private GameObject PlayerGameObject { get; set; }
-    
+
     private readonly IAssetProviderService _assets;
     private readonly IStaticDataService _staticData;
     private readonly IPersistentProgressService _progressService;
@@ -40,6 +43,7 @@ namespace Infrastructure.Factory
     public GameObject CreatePlayerObject(Vector3 at)
     {
       PlayerGameObject = InstantiateRegistred(AssetPath.HeroPath, at);
+      Player = PlayerGameObject;
       return PlayerGameObject;
     }
 

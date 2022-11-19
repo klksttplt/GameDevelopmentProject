@@ -14,5 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LevelKey: Level 1
   InitialHeroPosition: {x: 6.35, y: -9.46, z: 0}
-  EnemyPositions:
-  - {x: 30.17, y: 5.34, z: 0}
+  EnemyPositions: []

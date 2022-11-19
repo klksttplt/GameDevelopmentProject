@@ -15,7 +15,7 @@ MonoBehaviour:
   mapEntries:
   - statDef: {fileID: 11400000, guid: ad35a2652fe4b0140b96810d01593349, type: 2}
     defaultBaseValueProvider:
-      baseValue: 100
+      baseValue: 9
       perLevelIncrement: 0
   - statDef: {fileID: 11400000, guid: 0eba2de6b4a2a8c449ce3b5a348dd8ad, type: 2}
     defaultBaseValueProvider:
@@ -27,7 +27,7 @@ MonoBehaviour:
       perLevelIncrement: 0
   - statDef: {fileID: 11400000, guid: f2230b891fbd9764f8c321c67773018a, type: 2}
     defaultBaseValueProvider:
-      baseValue: 15
+      baseValue: 13
       perLevelIncrement: 0
   - statDef: {fileID: 11400000, guid: ac89e094db50c3e47ba4b0ea5c4289c6, type: 2}
     defaultBaseValueProvider:

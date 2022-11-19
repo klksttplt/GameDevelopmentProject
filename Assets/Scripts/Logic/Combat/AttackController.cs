@@ -1,3 +1,5 @@
+using System.Collections;
+using Animations;
 using Logic.Common;
 using Logic.Stats;
 using UnityEngine;
@@ -20,12 +22,14 @@ namespace Logic.Combat
         
         protected StatValueProvider attackRechargeTimeProvider;
         protected float attackRechargeTime;
-
+        
         // Public API
         
         public StatDef DamageStatDef => damageValueData.Def;
         public StatDef AttackRechargeTimeDef => attackRechargeTimeData.Def;
 
+        public bool isHit;
+        
         public abstract void Attack();
 
         // Methods: Lifecycle
@@ -41,5 +45,9 @@ namespace Logic.Combat
             attackRechargeTimeProvider = attackRechargeProvidedData ?? attackRechargeTimeData.DefaultBaseValueProvider;
             attackRechargeTime = attackRechargeTimeProvider.BaseValue;
         }
+        
+        // Methods: Internal State
+
+        protected abstract IEnumerator ResetAttackRoutine();
     }
 }

@@ -46,15 +46,43 @@ namespace Logic.Movement
                     Flip(true);
             }
             
+            Animable?.Move(input.x);
         }
 
+        public void MoveTowards(Vector3 position)
+        {
+            var direction = position - transform.position;
+            if (turnToMovementDir)
+            {
+                if (direction.x < 0)
+                    Flip(false);
+                else if (direction.x > 0)
+                    Flip(true);
+            }
+
+            var movePosition = transform.position;
+            movePosition.x = Mathf.MoveTowards(
+                transform.position.x, position.x, movementSpeed * Time.deltaTime);
+            Rigidbody.MovePosition(movePosition);
+        }
+        
         public void Jump()
         {
             if (IsGrounded())
             {
                 Rigidbody.velocity = new Vector2(Rigidbody.velocity.x, jumpForce);
+                Animable?.Jump(true);
                 StartCoroutine(ResetJumpRoutine());
             }
+        }
+        
+        public void Flip(bool facingLeft)
+        {
+            var currentFacingLeft = transform.localScale.x > 0;
+            if(facingLeft && currentFacingLeft)
+                transform.localScale = new Vector3( transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+            else if(!facingLeft && !currentFacingLeft)
+                transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
         }
         
         // Methods: Lifecycle
@@ -80,7 +108,7 @@ namespace Logic.Movement
 
         private bool IsGrounded()
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1f, groundMask);
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, .2f, groundMask);
             Debug.DrawRay(transform.position, Vector2.down, Color.green);
 
             if (hit.collider != null)
@@ -96,14 +124,5 @@ namespace Logic.Movement
             yield return new WaitForSeconds(0.1f);
             resetJump = false;
         }
-        private void Flip(bool facingLeft)
-        {
-            var currentFacingLeft = transform.localScale.x > 0;
-            if(facingLeft && currentFacingLeft)
-                transform.localScale = new Vector3( transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
-            else if(!facingLeft && !currentFacingLeft)
-                transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
-        }
-        
     }
 }
