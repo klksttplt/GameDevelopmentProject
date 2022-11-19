@@ -72,7 +72,7 @@ namespace Logic.Damage
                 currentHealth = ChangeHealth(damagedHealthValue);
                 
                 OnDamageTaken.Invoke(damage);
-                Debug.Log("Left health" + currentHealth);
+                Debug.Log(gameObject.name + " Left health" + currentHealth);
                 if (currentHealth <= 0f) OnDied.Invoke();
             }
         }

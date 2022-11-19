@@ -38,6 +38,14 @@ namespace Logic.Combat.Enemy
             blade.OnHit.AddListener(OnHit);
         }
 
+        private void Start()
+        {
+            damage = new Damage()
+            {
+                amount = damageValue
+            };
+        }
+
         private void FixedUpdate()
         {
             if (!player)
