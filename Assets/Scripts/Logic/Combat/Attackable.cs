@@ -8,7 +8,15 @@ namespace Logic.Combat
 
         public void TakeDamage(Damage takenDamage)
         {
+            if (Health.IsDead)
+                return;
+            
             Health.TakeDamage(takenDamage);
+            Animable.TakeDamage();
+            Animable.Attack(true);
+            AttackController.isHit = true;
+
         }
+        
     }
 }

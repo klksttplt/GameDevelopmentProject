@@ -8,6 +8,7 @@ namespace Infrastructure.Factory
 {
     public interface IGameFactory : IService
     {
+        GameObject Player { get;  }
         List<ISavedProgressReader> ProgressReaders { get; }
         List<ISavedProgress> ProgressWriters { get; }
 

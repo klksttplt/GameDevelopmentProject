@@ -27,6 +27,8 @@ namespace Logic.Combat
         public StatDef DamageStatDef => damageValueData.Def;
         public StatDef AttackRechargeTimeDef => attackRechargeTimeData.Def;
 
+        public bool isHit;
+        
         public abstract void Attack();
 
         // Methods: Lifecycle
