@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 61595832511010875}
   - component: {fileID: 552381702264858789}
-  - component: {fileID: 1409946121833040290}
+  - component: {fileID: 5313258731141250968}
   m_Layer: 7
   m_Name: Graphics
   m_TagString: Untagged
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &1409946121833040290
+--- !u!95 &5313258731141250968
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -93,7 +93,7 @@ Animator:
   m_GameObject: {fileID: 5780983198238717353}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7436e55ede25a8b4386deaa46beedbd7, type: 2}
+  m_Controller: {fileID: 9100000, guid: ed4e2e99c7f9f9e46b3aa77db20cc4a9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -199,6 +199,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0504c4c8d83e3a846b78e897abf700b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPatrolling: 0
+  pointA: {fileID: 0}
+  pointB: {fileID: 0}
+  distanceToStop: 0
+  waitingTime: 0
   spawnItemsAfterDeath: 1
   itemsToSpawn:
   - {fileID: 556749979693934808, guid: 519837589d3a9524bb5b05037e9762c6, type: 3}
