@@ -1,4 +1,5 @@
 using Infrastructure.Services;
+using Logic.Damage;
 
 namespace UI.Services.Factory
 {
@@ -6,5 +7,6 @@ namespace UI.Services.Factory
     {
         void CreateSettings();
         void CreateUIRoot();
+        void CreateHud(Health playerHealth);
     }
 }

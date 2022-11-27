@@ -3,6 +3,7 @@ using CodeBase.Infrastructure;
 using Infrastructure.Factory;
 using Infrastructure.Services;
 using Infrastructure.Services.PersistentProgress;
+using Logic.Damage;
 using StaticData;
 using UI.Services.Factory;
 using UnityEngine;
@@ -76,7 +77,7 @@ namespace Infrastructure.StateMachine
       _staticData.ForLevel(SceneManager.GetActiveScene().name);
     
     private void InitHud(GameObject hero) => 
-      _gameFactory.CreateHud();
+      _uiFactory.CreateHud(hero.GetComponent<Health>());
 
     private void CameraFollow(GameObject hero)
     {

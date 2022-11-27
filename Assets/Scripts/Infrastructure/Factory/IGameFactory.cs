@@ -16,7 +16,7 @@ namespace Infrastructure.Factory
         GameObject CreateEnemyObject(Vector3 at);
 
         CinemachineSwitcher CreateCinemachine();
-        GameObject CreateHud();
+        // GameObject CreateHud();
         GameObject CreateItem(Vector3 at);
         
         void Cleanup();
