@@ -8,6 +8,7 @@ namespace Logic.Damage
 {
     public abstract class BaseHealth : ContextComponent
     {
+        public abstract UnityEvent<float> OnHealthChange { get; }
         public abstract UnityEvent<float> OnHeal { get; }
 
         public abstract UnityEvent<Combat.Damage> OnDamageTaken { get; }

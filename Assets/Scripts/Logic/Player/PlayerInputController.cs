@@ -22,6 +22,9 @@ namespace Logic.Player
 
         private void Update()
         {
+            if (Health.IsDead)
+                return;
+            
             if(inputService.IsJumpButtonDown())
                 Moveable.Jump();
             if (inputService.IsAttackButtonDown())
@@ -30,8 +33,10 @@ namespace Logic.Player
 
         private void FixedUpdate()
         {
-            Moveable.Move(inputService.Axis);
+            if (Health.IsDead)
+                return;
             
+            Moveable.Move(inputService.Axis);
         }
     
         // Methods: Internal State

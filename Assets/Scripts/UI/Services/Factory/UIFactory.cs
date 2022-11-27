@@ -1,8 +1,12 @@
 using Infrastructure.AssetManagement;
+using Infrastructure.Factory;
 using Infrastructure.Services;
+using Logic.Damage;
 using StaticData;
 using StaticData.Windows;
+using UI.Elements;
 using UI.Services.Windows;
+using UI.Views;
 using UnityEngine;
 
 namespace UI.Services.Factory
@@ -10,31 +14,42 @@ namespace UI.Services.Factory
     class UIFactory : IUIFactory
     {
         private const string UIRootPath = "Prefabs/UI/UIRoot";
-        private readonly IStaticDataService _staticData;
-        private IAssetProviderService _assets;
-        private Transform _uiRoot;
-        private readonly IPersistentProgressService _progressService;
-
+        private readonly IStaticDataService staticData;
+        private readonly IAssetProviderService _assets;
+        private Transform uiRoot;
+        private readonly IPersistentProgressService progressService;
+        private IWindowService windowService;
+        private HUD hud;
 
         public UIFactory(
             IStaticDataService staticData, 
             IPersistentProgressService progressService, 
             IAssetProviderService assets)
         {
-            _staticData = staticData;
-            _progressService = progressService;
+            this.staticData = staticData;
+            this.progressService = progressService;
             _assets = assets;
         }
 
+        public void CreateHud(Health playerHealth)
+        {
+            windowService = AllServices.Container.Single<IWindowService>();
+            hud = _assets.Instantiate(AssetPath.HudPath).GetComponent<HUD>();
+            hud.SetupGUI(playerHealth);
+
+            foreach (OpenWindowButton openWindowButton in hud.GetComponentsInChildren<OpenWindowButton>())
+                openWindowButton.Construct(windowService);
+        }
+        
         public void CreateSettings()
         {
-            WindowConfig config = _staticData.ForWindow(WindowId.Settings);
-            Object.Instantiate(config.Prefab, _uiRoot);
+            WindowConfig config = staticData.ForWindow(WindowId.Settings);
+            Object.Instantiate(config.Prefab, uiRoot);
         }
 
         public void CreateUIRoot()
         {
-            _uiRoot = _assets.Instantiate(UIRootPath).transform;
+            uiRoot = _assets.Instantiate(UIRootPath).transform;
         }
     }
 }

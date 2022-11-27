@@ -56,7 +56,7 @@ namespace Infrastructure.Factory
       return _assets.Instantiate(AssetPath.CinemachinePath).GetComponent<CinemachineSwitcher>();
     }
 
-    public GameObject CreateHud()
+    /*public GameObject CreateHud()
     {
       GameObject hud = InstantiateRegistred(AssetPath.HudPath);
       //hud.GetComponentInChildren<LootCounter>().Construct(_progressService.Progress.WorldData);
@@ -65,7 +65,7 @@ namespace Infrastructure.Factory
         openWindowButton.Construct(_windowService);
 
       return hud;
-    }
+    }*/
 
     public GameObject CreateItem(Vector3 at)
     {

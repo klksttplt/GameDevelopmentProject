@@ -32,6 +32,12 @@ namespace Logic.Combat
         
         public abstract void Attack();
 
+        public void BoostDamage(float multiplier, float duration)
+        {
+            damageValue *= multiplier;
+            StartCoroutine(ResetBoost(multiplier, duration));
+        }
+        
         // Methods: Lifecycle
 
         public override void Awake()
@@ -49,5 +55,11 @@ namespace Logic.Combat
         // Methods: Internal State
 
         protected abstract IEnumerator ResetAttackRoutine();
+
+        private IEnumerator ResetBoost(float multiplier, float duration)
+        {
+            yield return new WaitForSeconds(duration);
+            damageValue /= multiplier;
+        }
     }
 }

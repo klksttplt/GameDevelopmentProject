@@ -54,6 +54,13 @@ namespace Logic.Combat.Enemy
                 else
                     return;
 
+            if (Health.IsDead)
+            {
+                isHit = false;
+                Animable.Attack(false);
+                return;
+            }
+            
             var distance = Vector3.Distance(transform.localPosition, player.transform.localPosition);
             if(distance > playerDetectionDistance)
             {

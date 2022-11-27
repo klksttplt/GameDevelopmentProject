@@ -8,12 +8,14 @@ namespace Logic.Damage
     {
         // Events
      
+        public override UnityEvent<float> OnHealthChange { get; } = new UnityEvent<float>();
+
         public override UnityEvent<float> OnHeal { get; } = new UnityEvent<float>();
         
         public override UnityEvent<Combat.Damage> OnDamageTaken { get; } = new UnityEvent<Combat.Damage>();
 
         public override UnityEvent OnDied { get; } = new UnityEvent();
-        
+
         // Fields: Editor
         
         [SerializeField] 
@@ -59,6 +61,7 @@ namespace Logic.Damage
         {
             var newValue = Mathf.Clamp(health, 0f, maxHealth);
             SetCurrentHealth(newValue);
+            OnHealthChange.Invoke(newValue);
             isDead = newValue <= 0f;
             return newValue;
         }
@@ -105,6 +108,7 @@ namespace Logic.Damage
             healthValueProvider = providedData ?? maxHealthStatData.DefaultBaseValueProvider;
             maxHealth = healthValueProvider.BaseValue;
             ChangeHealth(maxHealth);
+            
         }
         
         // Methods: Internal State
