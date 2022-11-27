@@ -194,6 +194,7 @@ GameObject:
   - component: {fileID: -7002080008662014022}
   - component: {fileID: -5713997434137625054}
   - component: {fileID: 6930627588491243731}
+  - component: {fileID: -839663723989608294}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -394,3 +395,15 @@ MonoBehaviour:
   isHit: 0
   playerBlade: {fileID: 4195028847473725524}
   attackDuration: 0.5
+--- !u!114 &-839663723989608294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4218276539042740469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d06652d044bc4d8dac4db6f8d27eb498, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -79,7 +79,7 @@ namespace Logic.Enemy
 
         protected virtual IEnumerator StopAndWait()
         {
-            Debug.Log("Stop and wait");
+            // Debug.Log("Stop and wait");
             Animable.Move(false);
             Animable.Idle();
             isPatrolling = false;

@@ -84,7 +84,11 @@ namespace Logic.Movement
             else if(!facingLeft && !currentFacingLeft)
                 transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
         }
-        
+
+        public void BoostSpeed(float multiplier, float time)
+        {
+            
+        }
         // Methods: Lifecycle
 
         public override void Awake()
@@ -109,7 +113,7 @@ namespace Logic.Movement
         private bool IsGrounded()
         {
             RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, .2f, groundMask);
-            Debug.DrawRay(transform.position, Vector2.down, Color.green);
+            // Debug.DrawRay(transform.position, Vector2.down, Color.green);
 
             if (hit.collider != null)
                 if (!resetJump)
