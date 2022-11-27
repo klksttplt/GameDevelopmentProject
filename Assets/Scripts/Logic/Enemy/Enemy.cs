@@ -44,12 +44,13 @@ namespace Logic.Enemy
             gameFactory = AllServices.Container.Single<IGameFactory>();
             Health.OnDied.AddListener(() =>
             {
+                Animable.Die();
                 if (spawnItemsAfterDeath)
                 {
                     spawnItemsAfterDeath = false;
                     foreach (var item in itemsToSpawn)
                         gameFactory.CreateItem(transform.position);}
-                Destroy(gameObject);
+                Destroy(gameObject, 5f);
             });
             currentTarget = pointA.position;
         }

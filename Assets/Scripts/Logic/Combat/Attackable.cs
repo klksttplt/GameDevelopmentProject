@@ -12,10 +12,12 @@ namespace Logic.Combat
                 return;
             
             Health.TakeDamage(takenDamage);
-            Animable.TakeDamage();
-            Animable.Attack(true);
-            AttackController.isHit = true;
-
+            if (Health.IsAlive)
+            {
+                Animable.TakeDamage();
+                Animable.Attack(true);
+                AttackController.isHit = true;
+            }
         }
         
     }

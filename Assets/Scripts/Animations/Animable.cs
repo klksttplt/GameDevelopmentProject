@@ -19,6 +19,7 @@ namespace Animations
         private static readonly int Idle1 = Animator.StringToHash("Idle");
         private static readonly int InCombat = Animator.StringToHash("InCombat");
         private static readonly int Hit = Animator.StringToHash("Hit");
+        private static readonly int Death = Animator.StringToHash("Death");
 
         // Public API
 
@@ -66,7 +67,11 @@ namespace Animations
         {
             return animator.GetCurrentAnimatorStateInfo(0).IsName(id);
         }
-        
+
+        public void Die()
+        {
+            animator.SetTrigger(Death);
+        }
         // Methods: Lifecycle
 
         private void Start()
