@@ -35,7 +35,7 @@ namespace Infrastructure.StateMachine
 
         private PlayerProgress NewProgress()
         {
-            var progress = new PlayerProgress("Level 1");
+            var progress = new PlayerProgress("MainMenu");
             return progress;
         }
     }

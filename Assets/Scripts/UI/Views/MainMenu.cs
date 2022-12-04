@@ -1,28 +1,33 @@
 using Infrastructure.Services;
 using Infrastructure.StateMachine;
-using UI.Services.Windows;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace UI.Views
 {
-    public class MainMenu : BaseWindow
+    public class MainMenu : MonoBehaviour
     {
+        [SerializeField] private Button playButton;
+        [SerializeField] private Button exitButton;
+        
         private IGameStateMachine stateMachine;
         
-        protected override void OnAwake()
+        private void Awake()
         {
-            base.OnAwake();
             stateMachine = AllServices.Container.Single<IGameStateMachine>();
-
+            
+            playButton.onClick.AddListener(Play);
+            exitButton.onClick.AddListener(Exit);
         }
 
-        public void Play()
+        private void Play()
         {
             stateMachine.Enter<LoadLevelState, string>("Level 1");
         }
 
-        public void Exit()
+        private void Exit()
         {
+            Debug.Log("Application.Quit()");
             Application.Quit();
         }
     }

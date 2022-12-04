@@ -19,7 +19,8 @@ namespace UI.Services.Factory
         private Transform uiRoot;
         private readonly IPersistentProgressService progressService;
         private IWindowService windowService;
-        private HUD hud;
+
+        public HUD Hud { get; private set; }
 
         public UIFactory(
             IStaticDataService staticData, 
@@ -34,17 +35,24 @@ namespace UI.Services.Factory
         public void CreateHud(Health playerHealth)
         {
             windowService = AllServices.Container.Single<IWindowService>();
-            hud = _assets.Instantiate(AssetPath.HudPath).GetComponent<HUD>();
-            hud.SetupGUI(playerHealth);
+            Hud = _assets.Instantiate(AssetPath.HudPath).GetComponent<HUD>();
+            Hud.SetupGUI(playerHealth);
 
-            foreach (OpenWindowButton openWindowButton in hud.GetComponentsInChildren<OpenWindowButton>())
+            foreach (OpenWindowButton openWindowButton in Hud.GetComponentsInChildren<OpenWindowButton>())
                 openWindowButton.Construct(windowService);
         }
-        
+
+
+
         public void CreateSettings()
         {
             WindowConfig config = staticData.ForWindow(WindowId.Settings);
             Object.Instantiate(config.Prefab, uiRoot);
+        }
+
+        public void CreateMenu()
+        {
+            _assets.Instantiate(AssetPath.MenuPath, uiRoot);
         }
 
         public void CreateUIRoot()
