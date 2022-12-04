@@ -1,9 +1,11 @@
 using System;
 using GameUtils;
+using Infrastructure.Services;
 using Logic.Damage;
 using Logic.Stats;
 using TMPro;
 using UI.Icons;
+using UI.Services.Factory;
 using UnityEngine;
 
 namespace UI.Views
@@ -30,8 +32,9 @@ namespace UI.Views
         
         // Fields: Internal State
 
+        private IUIFactory uiFactory;
         private float refreshTime = .5f;
-        
+
         // Public API
         
         public void SetupGUI(Health playerHealth)
@@ -46,12 +49,26 @@ namespace UI.Views
             keyIcon.Setup(keySprite);
             UpdateKey(false);
         }
-
+        
         public void UpdateKey(bool inStock)
         {
             keyHolder.gameObject.SetActive(inStock);
         }
         
+        // Methods: Lifecycle
+
+        private void Awake()
+        {
+            uiFactory = AllServices.Container.Single<IUIFactory>();
+
+        }
+
+        private void Update()
+        {
+            if(Input.GetKeyDown(KeyCode.Escape))
+                uiFactory.CreatePause();
+        }
+
         // Methods: Internal State
 
         private void Refresh()
