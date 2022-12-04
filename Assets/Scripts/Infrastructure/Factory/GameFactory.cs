@@ -119,5 +119,6 @@ namespace Infrastructure.Factory
     public const string HudPath = "Prefabs/UI/Hud";
     public const string CinemachinePath = "Prefabs/Camera/CM StateDrivenCamera";
     public const string KeyPath = "Prefabs/Items/Key";
+    public const string MenuPath = "Prefabs/UI/MainMenu";
   }
 }

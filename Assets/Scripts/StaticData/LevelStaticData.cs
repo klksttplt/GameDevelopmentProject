@@ -7,7 +7,7 @@ namespace StaticData
     public class LevelStaticData : ScriptableObject
     {
         public string LevelKey;
+        public bool isMenuLevel = false;
         public Vector3 InitialHeroPosition;
-        public List<Vector3> EnemyPositions;
     }
 }

@@ -1,11 +1,17 @@
 using Infrastructure.Services;
 using Logic.Damage;
+using UI.Views;
 
 namespace UI.Services.Factory
 {
     public interface IUIFactory : IService
     {
+        HUD Hud { get;  }
         void CreateSettings();
+        void CreatePause();
+        void CreateVictory();
+        void CreateLose();
+        void CreateMenu();
         void CreateUIRoot();
         void CreateHud(Health playerHealth);
     }

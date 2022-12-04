@@ -6,6 +6,7 @@ using Infrastructure.Services.PersistentProgress;
 using Logic.Damage;
 using StaticData;
 using UI.Services.Factory;
+using UI.Services.Windows;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -62,14 +63,16 @@ namespace Infrastructure.StateMachine
     private void InitGameWorld()
     {
       LevelStaticData levelData = LevelStaticData();
-      
-      GameObject player = _gameFactory.CreatePlayerObject(levelData.InitialHeroPosition);
-      InitHud(player);
-      CameraFollow(player);
 
-      foreach (var enemyPos in levelData.EnemyPositions)
+      if (levelData.isMenuLevel)
       {
-        _gameFactory.CreateEnemyObject(enemyPos);
+        _uiFactory.CreateMenu();
+      }
+      else
+      {
+        GameObject player = _gameFactory.CreatePlayerObject(levelData.InitialHeroPosition);
+        InitHud(player);
+        CameraFollow(player);
       }
     }
 

@@ -49,7 +49,7 @@ namespace Logic.Enemy
                 {
                     spawnItemsAfterDeath = false;
                     foreach (var item in itemsToSpawn)
-                        gameFactory.CreateItem(transform.position);}
+                        gameFactory.CreateItem(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z));}
                 Destroy(gameObject, 5f);
             });
             currentTarget = pointA.position;

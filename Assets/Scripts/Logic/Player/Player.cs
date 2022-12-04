@@ -1,4 +1,6 @@
+using Infrastructure.Services;
 using Logic.Common;
+using UI.Services.Factory;
 using UnityEngine;
 
 namespace Logic.Player
@@ -23,6 +25,7 @@ namespace Logic.Player
             if (col.CompareTag($"key"))
             {
                 Debug.Log("GOT KEY! GO TO THE PORTAL");
+                AllServices.Container.Single<IUIFactory>().Hud.UpdateKey(true);
                 Destroy(col.gameObject);
                 hasKey = true;
             }
