@@ -1,4 +1,6 @@
 using System.Collections;
+using System.Collections.Generic;
+using Infrastructure.Basic;
 using Logic.Common;
 using Logic.Stats;
 using UnityEngine;
@@ -16,6 +18,8 @@ namespace Logic.Movement
 
         [SerializeField, Header("Movement")] 
         private bool turnToMovementDir = true;
+        [SerializeField] 
+        private List<GameObject> effectsToFlip;
 
         [SerializeField, Header("Ground Check")] 
         private LayerMask groundMask;
@@ -79,10 +83,17 @@ namespace Logic.Movement
         public void Flip(bool facingLeft)
         {
             var currentFacingLeft = transform.localScale.x > 0;
-            if(facingLeft && currentFacingLeft)
+            if (facingLeft && currentFacingLeft)
+            {
                 transform.localScale = new Vector3( transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
-            else if(!facingLeft && !currentFacingLeft)
+                effectsToFlip.ForEach(t => t.transform.localScale = new Vector3( t.transform.localScale.x * -1, t.transform.localScale.y, t.transform.localScale.z));
+            }
+            else if (!facingLeft && !currentFacingLeft)
+            {
                 transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+                effectsToFlip.ForEach(t => t.transform.localScale = new Vector3( t.transform.localScale.x * -1, t.transform.localScale.y, t.transform.localScale.z));
+            }
+
         }
 
         public void BoostSpeed(float multiplier, float time)
