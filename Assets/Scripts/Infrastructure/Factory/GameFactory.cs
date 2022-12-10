@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using CameraLogic;
 using Infrastructure.AssetManagement;
@@ -67,9 +68,17 @@ namespace Infrastructure.Factory
       return hud;
     }*/
 
-    public GameObject CreateItem(Vector3 at)
+    public GameObject CreateItem(Vector3 at, Item item)
     {
-      return _assets.Instantiate(AssetPath.KeyPath, at);
+      switch (item)
+      {
+        case Item.Key:
+          return _assets.Instantiate(AssetPath.KeyPath, at);
+        case Item.Soul:
+          return _assets.Instantiate(AssetPath.SoulPath, at);
+        default:
+          throw new ArgumentOutOfRangeException(nameof(item), item, null);
+      }
     }
 
 
@@ -119,6 +128,13 @@ namespace Infrastructure.Factory
     public const string HudPath = "Prefabs/UI/Hud";
     public const string CinemachinePath = "Prefabs/Camera/CM StateDrivenCamera";
     public const string KeyPath = "Prefabs/Items/Key";
+    public const string SoulPath = "Prefabs/Items/Soul";
     public const string MenuPath = "Prefabs/UI/MainMenu";
   }
+}
+
+public enum Item
+{
+  Key,
+  Soul
 }
