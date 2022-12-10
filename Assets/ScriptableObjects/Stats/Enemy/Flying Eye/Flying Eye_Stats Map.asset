@@ -12,4 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c44ef0bb57c4781be6d6addb29a7112, type: 3}
   m_Name: Flying Eye_Stats Map
   m_EditorClassIdentifier: 
-  mapEntries: []
+  mapEntries:
+  - statDef: {fileID: 11400000, guid: ac89e094db50c3e47ba4b0ea5c4289c6, type: 2}
+    defaultBaseValueProvider:
+      baseValue: 2
+      perLevelIncrement: 0
+  - statDef: {fileID: 11400000, guid: 0eba2de6b4a2a8c449ce3b5a348dd8ad, type: 2}
+    defaultBaseValueProvider:
+      baseValue: 1
+      perLevelIncrement: 0
+  - statDef: {fileID: 11400000, guid: ad35a2652fe4b0140b96810d01593349, type: 2}
+    defaultBaseValueProvider:
+      baseValue: 45
+      perLevelIncrement: 0
+  - statDef: {fileID: 11400000, guid: b18f9a12089e30b4d8f971dda9cbcba4, type: 2}
+    defaultBaseValueProvider:
+      baseValue: 6
+      perLevelIncrement: 0
