@@ -26,7 +26,7 @@ namespace Logic.Enemy
         [SerializeField, Header("Items")] 
         private bool spawnItemsAfterDeath;
         [SerializeField]
-        private List<GameObject> itemsToSpawn;
+        private List<Item> itemsToSpawn;
 
         // Fields: Internal State
 
@@ -49,7 +49,7 @@ namespace Logic.Enemy
                 {
                     spawnItemsAfterDeath = false;
                     foreach (var item in itemsToSpawn)
-                        gameFactory.CreateItem(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z));}
+                        gameFactory.CreateItem(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), item);}
                 Destroy(gameObject, 5f);
             });
             currentTarget = pointA.position;

@@ -17,7 +17,7 @@ namespace Infrastructure.Factory
 
         CinemachineSwitcher CreateCinemachine();
         // GameObject CreateHud();
-        GameObject CreateItem(Vector3 at);
+        GameObject CreateItem(Vector3 at, Item item);
         
         void Cleanup();
     }
