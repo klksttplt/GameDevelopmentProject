@@ -73,10 +73,7 @@ namespace UI.Views
 
         private void Refresh()
         {
-            if (PlayerPrefs.HasKey("Souls"))
-                soulText.text = string.Format(soulText.text, PlayerPrefs.GetFloat("Souls"));
-            else
-                soulText.text = string.Format(soulText.text, 0);
+            soulText.text = $"x{PlayerPrefs.GetInt("Souls")}";
         }
         
         private void UpdateHealthPanel(float currentHealth)

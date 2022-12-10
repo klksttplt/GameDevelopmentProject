@@ -29,6 +29,13 @@ namespace Logic.Player
                 Destroy(col.gameObject);
                 hasKey = true;
             }
+
+            if (col.CompareTag($"soul"))
+            {
+                PlayerPrefs.SetInt("Souls", PlayerPrefs.GetInt("Souls")+1);
+                Destroy(col.gameObject);
+
+            }
         }
     }
 }
