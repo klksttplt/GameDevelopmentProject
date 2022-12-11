@@ -281,8 +281,7 @@ MonoBehaviour:
   distanceToStop: 0.1
   waitingTime: 2
   spawnItemsAfterDeath: 1
-  itemsToSpawn:
-  - {fileID: 556749979693934808, guid: 519837589d3a9524bb5b05037e9762c6, type: 3}
+  itemsToSpawn: 0000000001000000
 --- !u!114 &7430628444779734017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -373,6 +372,7 @@ MonoBehaviour:
       baseValue: 0
       perLevelIncrement: 0
   turnToMovementDir: 1
+  effectsToFlip: []
   groundMask:
     serializedVersion: 2
     m_Bits: 256
