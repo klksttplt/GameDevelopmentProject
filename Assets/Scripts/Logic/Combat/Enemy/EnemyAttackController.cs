@@ -61,14 +61,15 @@ namespace Logic.Combat.Enemy
                 return;
             }
             
-            var distance = Vector3.Distance(transform.localPosition, player.transform.localPosition);
+            var distance = Vector3.Distance(transform.position, player.transform.position);
+    
             if(distance > playerDetectionDistance)
             {
                 isHit = false;
                 Animable.Attack(false);
             }
-
-            var direction = player.transform.localPosition.x - transform.localPosition.x;
+            
+            var direction = player.transform.position.x - transform.position.x;
             if (direction > 0 && Animable.GetBool("InCombat"))
                 Moveable.Flip(true);
             else if (direction < 0 && Animable.GetBool("InCombat"))
