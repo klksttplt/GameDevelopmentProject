@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c44ef0bb57c4781be6d6addb29a7112, type: 3}
+  m_Name: Skeleton_StatsMap 1
+  m_EditorClassIdentifier: 
+  mapEntries:
+  - statDef: {fileID: 11400000, guid: ad35a2652fe4b0140b96810d01593349, type: 2}
+    defaultBaseValueProvider:
+      baseValue: 45
+      perLevelIncrement: 0
+  - statDef: {fileID: 11400000, guid: 0eba2de6b4a2a8c449ce3b5a348dd8ad, type: 2}
+    defaultBaseValueProvider:
+      baseValue: 1
+      perLevelIncrement: 0
+  - statDef: {fileID: 11400000, guid: ac89e094db50c3e47ba4b0ea5c4289c6, type: 2}
+    defaultBaseValueProvider:
+      baseValue: 1.5
+      perLevelIncrement: 0
+  - statDef: {fileID: 11400000, guid: b18f9a12089e30b4d8f971dda9cbcba4, type: 2}
+    defaultBaseValueProvider:
+      baseValue: 6
+      perLevelIncrement: 0

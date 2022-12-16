@@ -86,8 +86,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0504c4c8d83e3a846b78e897abf700b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnItemsAfterDeath: 0
-  itemsToSpawn: []
+  isPatrolling: 1
+  pointA: {fileID: 0}
+  pointB: {fileID: 0}
+  distanceToStop: 0.1
+  waitingTime: 2
+  spawnItemsAfterDeath: 1
+  itemsToSpawn: 01000000
 --- !u!114 &-6422900219809350389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,9 +106,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealthStatData:
-    statDef: {fileID: 0}
+    statDef: {fileID: 11400000, guid: ad35a2652fe4b0140b96810d01593349, type: 2}
     defaultBaseValueProvider:
-      baseValue: 0
+      baseValue: 1
       perLevelIncrement: 0
 --- !u!114 &-2942334030961086482
 MonoBehaviour:
@@ -157,7 +162,7 @@ Transform:
   m_GameObject: {fileID: 6681185875365499322}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 4935617539293076402}
   m_RootOrder: 0

@@ -294,7 +294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0acf50846e94971b287dfabbb1f8a2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statsMap: {fileID: 11400000, guid: ae2bc39e239fa7f468a520c50a0c4863, type: 2}
+  statsMap: {fileID: 11400000, guid: 527ae10703cebd94c949a020537bd01a, type: 2}
 --- !u!114 &7846728656218101887
 MonoBehaviour:
   m_ObjectHideFlags: 0
