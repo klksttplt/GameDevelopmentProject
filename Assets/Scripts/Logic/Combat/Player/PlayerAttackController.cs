@@ -70,7 +70,7 @@ namespace Logic.Combat.Player
 
         private void OnHit(Collider2D damagedTarget)
         {
-            var attackable = damagedTarget.gameObject.GetComponent<Attackable>();
+            var attackable = damagedTarget.gameObject.GetComponentInParent<Attackable>();
             if (attackable & !damagedTargets.Contains(attackable))
             {
                 damagedTargets.Add(attackable);
