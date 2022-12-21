@@ -130,6 +130,7 @@ namespace Infrastructure.Factory
     public const string KeyPath = "Prefabs/Items/Key";
     public const string SoulPath = "Prefabs/Items/Soul";
     public const string MenuPath = "Prefabs/UI/MainMenu";
+    public const string LoseScreenPath = "Prefabs/UI/LoseScreen";
   }
 }
 
