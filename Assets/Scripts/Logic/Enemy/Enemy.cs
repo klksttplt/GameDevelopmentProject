@@ -45,6 +45,7 @@ namespace Logic.Enemy
             Health.OnDied.AddListener(() =>
             {
                 Animable.Die();
+                Feedbacks.DeathFeedbacks.PlayFeedbacks();
                 if (spawnItemsAfterDeath)
                 {
                     spawnItemsAfterDeath = false;

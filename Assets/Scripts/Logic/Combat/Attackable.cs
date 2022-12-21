@@ -9,7 +9,10 @@ namespace Logic.Combat
         public void TakeDamage(Damage takenDamage)
         {
             if (Health.IsDead)
+            {
+                Feedbacks.AttackedFeedbacks.PlayFeedbacks();
                 return;
+            }
             
             Health.TakeDamage(takenDamage);
             if (Health.IsAlive)

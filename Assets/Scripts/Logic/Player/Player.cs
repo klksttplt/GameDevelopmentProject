@@ -18,6 +18,7 @@ namespace Logic.Player
             Health.OnDied.AddListener(() =>
             {
                 Animable.Die();
+                Feedbacks.DeathFeedbacks.PlayFeedbacks();
                 uiFactory.CreateLose();
                 Destroy(gameObject, 5f);
             });

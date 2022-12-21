@@ -4,6 +4,7 @@ using Infrastructure.Services;
 using Infrastructure.StateMachine;
 using Logic.Damage;
 using Logic.Stats;
+using MoreMountains.Feedbacks;
 using TMPro;
 using UI.Icons;
 using UI.Services.Factory;
@@ -34,7 +35,8 @@ namespace UI.Views
 
         [SerializeField, Header("Pause")] 
         private GameObject pauseObject;
-        [SerializeField] private Button pauseButton; 
+        [SerializeField] private Button pauseButton;
+        [SerializeField] private MMFeedbacks pauseFeedbacks;
             
         [SerializeField, Header("Pause")] 
         private GameObject loseObject;
@@ -115,6 +117,7 @@ namespace UI.Views
             if (loseObject.activeSelf)
                 return;
             
+            pauseFeedbacks.PlayFeedbacks();
             pauseObject.SetActive(!pauseObject.activeSelf);
             Time.timeScale = pauseObject.activeSelf ? 0 : 1;
         }

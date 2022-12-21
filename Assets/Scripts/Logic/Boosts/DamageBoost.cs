@@ -1,4 +1,5 @@
-﻿using Logic.Stats;
+﻿using Logic.EffectsFeedbacks;
+using Logic.Stats;
 using UnityEngine;
 
 namespace Logic.Boosts
@@ -8,5 +9,11 @@ namespace Logic.Boosts
         [SerializeField] private StatData boostDurationStatData;
 
         public StatValueProvider BoostDurationStatData => boostDurationStatData.DefaultBaseValueProvider;
+        
+        protected override void ApplyBoostToTarget(Boostable target)
+        {
+            target.GetComponent<Feedbacks>()?.DamageBoostFeedbacks.PlayFeedbacks();
+            base.ApplyBoostToTarget(target);
+        }
     }
 }

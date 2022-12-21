@@ -32,6 +32,7 @@ namespace Logic.Combat.Player
             {
                 playerBlade.gameObject.SetActive(true);
                 Animable?.Attack();
+                Feedbacks.AttackFeedbacks.PlayFeedbacks();
                 StartCoroutine(ResetAttackRoutine());
             }
         }
