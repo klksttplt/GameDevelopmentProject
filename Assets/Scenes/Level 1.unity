@@ -19482,7 +19482,7 @@ PrefabInstance:
       objectReference: {fileID: 1549260870}
     - target: {fileID: 6723770655223210477, guid: a84e7a80e2bfe984e8f0bdb414c29b0c, type: 3}
       propertyPath: spawnItemsAfterDeath
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6723770655223210477, guid: a84e7a80e2bfe984e8f0bdb414c29b0c, type: 3}
       propertyPath: itemsToSpawn.Array.size
