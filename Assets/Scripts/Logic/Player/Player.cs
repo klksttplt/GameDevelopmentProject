@@ -29,12 +29,14 @@ namespace Logic.Player
             {
                 Debug.Log("GOT KEY! GO TO THE PORTAL");
                 AllServices.Container.Single<IUIFactory>().Hud.UpdateKey(true);
+                Feedbacks.CollectiblePickupFeedbacks.PlayFeedbacks();
                 Destroy(col.gameObject);
                 hasKey = true;
             }
 
             if (col.CompareTag($"soul"))
             {
+                Feedbacks.CollectiblePickupFeedbacks.PlayFeedbacks();
                 PlayerPrefs.SetInt("Souls", PlayerPrefs.GetInt("Souls")+1);
                 Destroy(col.gameObject);
 

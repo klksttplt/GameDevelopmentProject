@@ -2,6 +2,7 @@
 using Animations;
 using Logic.Combat;
 using Logic.Damage;
+using Logic.EffectsFeedbacks;
 using Logic.Movement;
 using UnityEngine;
 
@@ -34,6 +35,9 @@ namespace Logic.Common
         public Animable Animable { get; private set; }
         public bool IsAnimable { get; private set; }
         
+        public Feedbacks Feedbacks { get; private set; }
+        public bool HasFeedbacks { get; private set; }
+        
         // Lifecycle
 
         public virtual void Awake()
@@ -60,6 +64,9 @@ namespace Logic.Common
                 
                 Animable = GetComponent<Animable>();
                 IsAnimable = Animable != null;
+                
+                Feedbacks = GetComponent<Feedbacks>();
+                HasFeedbacks = Feedbacks != null;
             }
         }
     }
