@@ -9,14 +9,12 @@ namespace Logic.Combat
         public void TakeDamage(Damage takenDamage)
         {
             if (Health.IsDead)
-            {
-                Feedbacks.AttackedFeedbacks.PlayFeedbacks();
                 return;
-            }
-            
+
             Health.TakeDamage(takenDamage);
             if (Health.IsAlive)
             {
+                Feedbacks.AttackedFeedbacks.PlayFeedbacks();
                 Animable.TakeDamage();
                 Animable.Attack(true);
                 AttackController.isHit = true;

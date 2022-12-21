@@ -25,9 +25,9 @@ namespace Logic.LevelTransition
                 return;
 
             var player = other.GetComponent<Player.Player>();
-            Debug.Log(player + " "  + player.hasKey);
             if (player && player.hasKey)
             {
+                Debug.Log(player + " "  + player.hasKey);
                 transferFeedbacks?.PlayFeedbacks();
                 stateMachine.Enter<LoadLevelState, string>(transferTo);
             }
