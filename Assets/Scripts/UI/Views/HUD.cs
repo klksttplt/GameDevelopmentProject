@@ -9,6 +9,7 @@ using TMPro;
 using UI.Icons;
 using UI.Services.Factory;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace UI.Views
@@ -124,7 +125,7 @@ namespace UI.Views
 
         private void Restart()
         {
-            stateMachine.Enter<LoadLevelState, string>("MainMenu");
+            stateMachine.Enter<LoadLevelState, string>(SceneManager.GetActiveScene().name);
         }
 
         
