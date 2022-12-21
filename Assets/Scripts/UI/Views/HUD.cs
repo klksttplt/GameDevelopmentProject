@@ -1,6 +1,7 @@
 using System;
 using GameUtils;
 using Infrastructure.Services;
+using Infrastructure.StateMachine;
 using Logic.Damage;
 using Logic.Stats;
 using TMPro;
@@ -35,11 +36,16 @@ namespace UI.Views
         private GameObject pauseObject;
         [SerializeField] private Button pauseButton; 
             
+        [SerializeField, Header("Pause")] 
+        private GameObject loseObject;
+        [SerializeField] private Button restartButton; 
+        
         // Fields: Internal State
 
+        private IGameStateMachine stateMachine;
         private IUIFactory uiFactory;
         private float refreshTime = .5f;
-
+        
         // Public API
         
         public void SetupGUI(Health playerHealth)
@@ -55,25 +61,37 @@ namespace UI.Views
             UpdateKey(false);
             
             pauseButton.onClick.AddListener(Pause);
+            restartButton.onClick.AddListener(Restart);
         }
         
         public void UpdateKey(bool inStock)
         {
             keyHolder.gameObject.SetActive(inStock);
         }
+
+        public void EnableLoseScreen()
+        {
+            loseObject.SetActive(true);
+        }
         
         // Methods: Lifecycle
 
         private void Awake()
         {
+            stateMachine = AllServices.Container.Single<IGameStateMachine>();
             uiFactory = AllServices.Container.Single<IUIFactory>();
-
         }
 
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.Escape)) 
                 Pause();
+        }
+        
+        private void OnDestroy()
+        {
+            pauseButton.onClick.RemoveListener(Pause);
+            restartButton.onClick.RemoveListener(Restart);
         }
 
         // Methods: Internal State
@@ -94,13 +112,18 @@ namespace UI.Views
 
         private void Pause()
         {
+            if (loseObject.activeSelf)
+                return;
+            
             pauseObject.SetActive(!pauseObject.activeSelf);
             Time.timeScale = pauseObject.activeSelf ? 0 : 1;
         }
 
-        private void OnDestroy()
+        private void Restart()
         {
-            pauseButton.onClick.RemoveListener(Pause);
+            stateMachine.Enter<LoadLevelState, string>("MainMenu");
         }
+
+        
     }
 }

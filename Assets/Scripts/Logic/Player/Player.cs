@@ -10,12 +10,15 @@ namespace Logic.Player
         [HideInInspector]
         public bool hasKey;
 
+        private IUIFactory uiFactory;
         public override void Awake()
         {
             base.Awake();
+            uiFactory = AllServices.Container.Single<IUIFactory>();
             Health.OnDied.AddListener(() =>
             {
                 Animable.Die();
+                uiFactory.CreateLose();
                 Destroy(gameObject, 5f);
             });
         }
