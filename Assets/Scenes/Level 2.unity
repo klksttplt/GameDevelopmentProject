@@ -990,11 +990,15 @@ PrefabInstance:
       objectReference: {fileID: 1577426109}
     - target: {fileID: 6723770655223210477, guid: a84e7a80e2bfe984e8f0bdb414c29b0c, type: 3}
       propertyPath: itemsToSpawn.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6723770655223210477, guid: a84e7a80e2bfe984e8f0bdb414c29b0c, type: 3}
       propertyPath: itemsToSpawn.Array.data[0]
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6723770655223210477, guid: a84e7a80e2bfe984e8f0bdb414c29b0c, type: 3}
+      propertyPath: itemsToSpawn.Array.data[1]
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7327496017411930545, guid: a84e7a80e2bfe984e8f0bdb414c29b0c, type: 3}
       propertyPath: m_RootOrder
@@ -1079,7 +1083,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 660005383}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -41.08, y: -4.08, z: 0}
+  m_LocalPosition: {x: -41.08, y: -3.96, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1701037862}
@@ -1109,7 +1113,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 681873382}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -33.86, y: -4.08, z: 0}
+  m_LocalPosition: {x: -34.17, y: -3.96, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1701037862}

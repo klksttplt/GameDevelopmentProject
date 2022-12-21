@@ -94,7 +94,7 @@ Animator:
   m_GameObject: {fileID: 5780983198238717353}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7436e55ede25a8b4386deaa46beedbd7, type: 2}
+  m_Controller: {fileID: 9100000, guid: d0afaec16c09b6d4f9dabb93a4fb62ca, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -281,7 +281,7 @@ MonoBehaviour:
   distanceToStop: 0.1
   waitingTime: 2
   spawnItemsAfterDeath: 1
-  itemsToSpawn: 0000000001000000
+  itemsToSpawn: 01000000
 --- !u!114 &7430628444779734017
 MonoBehaviour:
   m_ObjectHideFlags: 0
