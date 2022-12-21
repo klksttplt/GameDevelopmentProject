@@ -95,6 +95,7 @@ namespace Logic.Combat.Enemy
             {
                 // damagedTargets.Add(attackable);
                 attackable.TakeDamage(damage);
+                Feedbacks.AttackFeedbacks.PlayFeedbacks();
                 Debug.Log("Enemy damaged " + damagedTarget.name);
                 resetAttack = false;
 

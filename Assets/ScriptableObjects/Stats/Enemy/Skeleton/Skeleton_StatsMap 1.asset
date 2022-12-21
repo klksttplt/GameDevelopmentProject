@@ -10,26 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c44ef0bb57c4781be6d6addb29a7112, type: 3}
-  m_Name: Player_StatsMap
+  m_Name: Skeleton_StatsMap 1
   m_EditorClassIdentifier: 
   mapEntries:
   - statDef: {fileID: 11400000, guid: ad35a2652fe4b0140b96810d01593349, type: 2}
     defaultBaseValueProvider:
-      baseValue: 9
+      baseValue: 45
       perLevelIncrement: 0
   - statDef: {fileID: 11400000, guid: 0eba2de6b4a2a8c449ce3b5a348dd8ad, type: 2}
     defaultBaseValueProvider:
-      baseValue: 15
-      perLevelIncrement: 0
-  - statDef: {fileID: 11400000, guid: b18f9a12089e30b4d8f971dda9cbcba4, type: 2}
-    defaultBaseValueProvider:
-      baseValue: 13
-      perLevelIncrement: 0
-  - statDef: {fileID: 11400000, guid: f2230b891fbd9764f8c321c67773018a, type: 2}
-    defaultBaseValueProvider:
-      baseValue: 15
+      baseValue: 1
       perLevelIncrement: 0
   - statDef: {fileID: 11400000, guid: ac89e094db50c3e47ba4b0ea5c4289c6, type: 2}
     defaultBaseValueProvider:
-      baseValue: 0.5
+      baseValue: 1.5
+      perLevelIncrement: 0
+  - statDef: {fileID: 11400000, guid: b18f9a12089e30b4d8f971dda9cbcba4, type: 2}
+    defaultBaseValueProvider:
+      baseValue: 6
       perLevelIncrement: 0

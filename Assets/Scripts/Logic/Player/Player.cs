@@ -10,12 +10,16 @@ namespace Logic.Player
         [HideInInspector]
         public bool hasKey;
 
+        private IUIFactory uiFactory;
         public override void Awake()
         {
             base.Awake();
+            uiFactory = AllServices.Container.Single<IUIFactory>();
             Health.OnDied.AddListener(() =>
             {
                 Animable.Die();
+                Feedbacks.DeathFeedbacks.PlayFeedbacks();
+                uiFactory.CreateLose();
                 Destroy(gameObject, 5f);
             });
         }
@@ -26,12 +30,14 @@ namespace Logic.Player
             {
                 Debug.Log("GOT KEY! GO TO THE PORTAL");
                 AllServices.Container.Single<IUIFactory>().Hud.UpdateKey(true);
+                Feedbacks.CollectiblePickupFeedbacks.PlayFeedbacks();
                 Destroy(col.gameObject);
                 hasKey = true;
             }
 
             if (col.CompareTag($"soul"))
             {
+                Feedbacks.CollectiblePickupFeedbacks.PlayFeedbacks();
                 PlayerPrefs.SetInt("Souls", PlayerPrefs.GetInt("Souls")+1);
                 Destroy(col.gameObject);
 

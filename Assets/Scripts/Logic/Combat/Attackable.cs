@@ -10,10 +10,11 @@ namespace Logic.Combat
         {
             if (Health.IsDead)
                 return;
-            
+
             Health.TakeDamage(takenDamage);
             if (Health.IsAlive)
             {
+                Feedbacks.AttackedFeedbacks.PlayFeedbacks();
                 Animable.TakeDamage();
                 Animable.Attack(true);
                 AttackController.isHit = true;

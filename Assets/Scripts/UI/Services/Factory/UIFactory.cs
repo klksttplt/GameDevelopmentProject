@@ -41,28 +41,17 @@ namespace UI.Services.Factory
             foreach (OpenWindowButton openWindowButton in Hud.GetComponentsInChildren<OpenWindowButton>())
                 openWindowButton.Construct(windowService);
         }
-
-
-
+        
         public void CreateSettings()
         {
             WindowConfig config = staticData.ForWindow(WindowId.Settings);
             Object.Instantiate(config.Prefab, uiRoot);
         }
 
-        public void CreatePause()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void CreateVictory()
-        {
-            throw new System.NotImplementedException();
-        }
-
         public void CreateLose()
         {
-            throw new System.NotImplementedException();
+            Hud.EnableLoseScreen();
+            // _assets.Instantiate(AssetPath.LoseScreenPath, uiRoot);
         }
 
         public void CreateMenu()
