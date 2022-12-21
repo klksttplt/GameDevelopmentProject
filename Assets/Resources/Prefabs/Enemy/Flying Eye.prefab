@@ -80,6 +80,7 @@ GameObject:
   - component: {fileID: -4416218841152711345}
   - component: {fileID: 7294798038028502517}
   - component: {fileID: -6209106048581816681}
+  - component: {fileID: 1754412225735762650}
   m_Layer: 9
   m_Name: Flying Eye
   m_TagString: Untagged
@@ -246,7 +247,34 @@ MonoBehaviour:
       perLevelIncrement: 0
   isHit: 0
   blade: {fileID: 5611749072880109360}
-  playerDetectionDistance: 3
+  playerDetectionDistance: 5
+--- !u!114 &1754412225735762650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4267294046367039467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c560c4fb6736f844087fbfe944f9df46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeedData:
+    statDef: {fileID: 11400000, guid: b18f9a12089e30b4d8f971dda9cbcba4, type: 2}
+    defaultBaseValueProvider:
+      baseValue: 0
+      perLevelIncrement: 0
+  jumpForceData:
+    statDef: {fileID: 11400000, guid: f2230b891fbd9764f8c321c67773018a, type: 2}
+    defaultBaseValueProvider:
+      baseValue: 0
+      perLevelIncrement: 0
+  turnToMovementDir: 1
+  effectsToFlip: []
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &6681185875365499322
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,7 +303,7 @@ Transform:
   m_GameObject: {fileID: 6681185875365499322}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: -3, y: 3, z: 3}
   m_Children:
   - {fileID: 2219585336816646095}
   m_Father: {fileID: 4935617539293076402}

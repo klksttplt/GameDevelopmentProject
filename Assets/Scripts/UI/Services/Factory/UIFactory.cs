@@ -50,16 +50,6 @@ namespace UI.Services.Factory
             Object.Instantiate(config.Prefab, uiRoot);
         }
 
-        public void CreatePause()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void CreateVictory()
-        {
-            throw new System.NotImplementedException();
-        }
-
         public void CreateLose()
         {
             throw new System.NotImplementedException();

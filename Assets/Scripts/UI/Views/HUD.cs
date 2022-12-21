@@ -7,6 +7,7 @@ using TMPro;
 using UI.Icons;
 using UI.Services.Factory;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace UI.Views
 {
@@ -29,7 +30,11 @@ namespace UI.Views
         private RectTransform keyHolder;
         [SerializeField] private Icon keyIcon;
         [SerializeField] private Sprite keySprite;
-        
+
+        [SerializeField, Header("Pause")] 
+        private GameObject pauseObject;
+        [SerializeField] private Button pauseButton; 
+            
         // Fields: Internal State
 
         private IUIFactory uiFactory;
@@ -48,6 +53,8 @@ namespace UI.Views
             
             keyIcon.Setup(keySprite);
             UpdateKey(false);
+            
+            pauseButton.onClick.AddListener(Pause);
         }
         
         public void UpdateKey(bool inStock)
@@ -65,8 +72,8 @@ namespace UI.Views
 
         private void Update()
         {
-            if(Input.GetKeyDown(KeyCode.Escape))
-                uiFactory.CreatePause();
+            if (Input.GetKeyDown(KeyCode.Escape)) 
+                Pause();
         }
 
         // Methods: Internal State
@@ -85,5 +92,15 @@ namespace UI.Views
                 Instantiate(Icon, healthContainer).Setup(healthDef.SpriteIcon);
         }
 
+        private void Pause()
+        {
+            pauseObject.SetActive(!pauseObject.activeSelf);
+            Time.timeScale = pauseObject.activeSelf ? 0 : 1;
+        }
+
+        private void OnDestroy()
+        {
+            pauseButton.onClick.RemoveListener(Pause);
+        }
     }
 }

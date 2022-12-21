@@ -8,8 +8,6 @@ namespace UI.Services.Factory
     {
         HUD Hud { get;  }
         void CreateSettings();
-        void CreatePause();
-        void CreateVictory();
         void CreateLose();
         void CreateMenu();
         void CreateUIRoot();
